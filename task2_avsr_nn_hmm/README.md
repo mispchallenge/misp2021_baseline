@@ -55,8 +55,12 @@ export decode_cmd=run.pl
 - **Download Coordinate Information Used to Crop ROI**
 
 ```
-url:
-verification code:
+dropbox url:https://www.dropbox.com/s/m3a14wvukfkjqmr/misp2021_task2_roi.zip?dl=0
+verification code: jTNEJkp83c
+
+Baidu clouddisk url：https://pan.baidu.com/s/1B2Ocj9Gqyi297kZ_ubu-9w 
+verification code：1p1j 
+MD5：50e2a2ea10a436fd389d6df1f9881831
 ```
 
 - **Setting  Paths**
