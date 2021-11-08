@@ -1,4 +1,4 @@
-# MISP2021 Challenge Task2 Baseline
+# MISP2021 Challenge Task2 NN-HMM Based AVSR Baseline
 
 - **Data preparation**
 
