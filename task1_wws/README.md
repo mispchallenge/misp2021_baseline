@@ -42,13 +42,10 @@
 
 ## Results
 
-```
+
   The performance of the same trained baseline model under different three thresholds is as follows:
-​
-  FRR : 38.38%,  FAR:  0.82%  (threshold=0.9)
-​  FRR : 19.95%,  FAR:  3.63%  (threshold=0.25)
-​  FRR : 7.77%,   FAR: 16.89%  (threshold=0.01)
-```
+![result_readme](.\media\result_readme.png)
+
 
 ## Setting Paths
 
