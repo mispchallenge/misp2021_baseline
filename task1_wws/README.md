@@ -44,7 +44,7 @@
 
 
   The performance of the same trained baseline model under different three thresholds is as follows:
-![result_readme](.\media\result_readme.png)
+![result_readme](media/result_readme.png)
 
 
 ## Setting Paths
