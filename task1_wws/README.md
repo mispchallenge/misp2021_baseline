@@ -43,7 +43,7 @@
 ## Results
 
 
-  The system performance is as follows:
+  The system performances are as follows:
 ![result_readme](media/result_readme.png)
 
 
