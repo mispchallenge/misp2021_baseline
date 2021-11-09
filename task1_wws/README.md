@@ -43,7 +43,7 @@
 ## Results
 
 
-  The performance of the same trained baseline model under different three thresholds is as follows:
+  The system performance is as follows:
 ![result_readme](media/result_readme.png)
 
 
