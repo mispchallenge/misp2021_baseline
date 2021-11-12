@@ -1,8 +1,8 @@
-## MISP2021 Task 1 - Wake-up word spottig (WWS) baseline systems
+## MISP2021 Task 1 - Wake word spottig (WWS) baseline systems
 
 - **Introduction**
 
-    This is the baseline system for the Multimodal Information Based Speech Processing Challenge 2021 (MISP2021) challenge task 1. This task concerning the identification of predefined wake word(s) in utterances. ‘1’ indicates that the sample contains wake-up word, and ‘0’ indicates the opposite. For a more detailed description see MISP Challenge task description.
+    This is the baseline system for the Multimodal Information Based Speech Processing Challenge 2021 (MISP2021) challenge task 1. This task concerning the identification of predefined wake word(s) in utterances. ‘1’ indicates that the sample contains wake word, and ‘0’ indicates the opposite. For a more detailed description see MISP Challenge task description.
 
 
 - **System description**
@@ -35,7 +35,7 @@
         We provide a simple tool to add noise with different signal-to-noise ratio. In our configuration, the reverberated speech is corrupted by the collected noise at seven signal-to-noise ratios (from -15dB to 15dB with a step of 5dB).
 
 
-- **Audio Wake-up Word Spotting**
+- **Audio Wake Word Spotting**
 
     For features extraction, we employ 40-dimensional filter bank (FBank) features normalized by global mean and variance as the input of the audio WWS system. The final output of the models compared with the preset threshold after sigmoid operation to calculate the false reject rate (FRR) and false alarm rate (FAR). Here comes the results.
 
