@@ -2,19 +2,19 @@
 
 - **Introduction**
 
-    This is the baseline system for the Multimodal Information Based Speech Processing Challenge 2021 (MISP2021) challenge task 1. This task concerning the identification of predefined wake word(s) in utterances. ‘1’ indicates that the sample contains wake word, and ‘0’ indicates the opposite. For a more detailed description see MISP Challenge task description.
+    This is the baseline system for the Multimodal Information Based Speech Processing Challenge 2021 (MISP2021) challenge task 1. This task concerns the identification of predefined wake word(s) in utterances. ‘1’ indicates that the sample contains wake word, and ‘0’ indicates the opposite. For a more detailed description see MISP Challenge task description.
 
 
 - **System description**
 
-    The system implements a neural network (NN) based approach, where filter bank features are first extracted for each sample, and a network consisting of CNN layers, LSTM layer and fully connected layers is trained to assign labels to the audio samples.
+    The system implements a neural network (NN) based approach, where filter bank features are first extracted for each sample, and a network consisting of CNN layers, LSTM layer and fully connected layers are trained to assign labels to the audio samples.
 
 
 - **Data preparation**
 
   - **prepare data directory**
 
-      For training, development, and test sets, we prepare data directories by extracting the downloaded zip compressed file to the current folder. Here, we only use the channel 1.
+      For training, development, and test sets, we prepare data directories by extracting the downloaded zip compressed file to the current folder. Here, we only use channel 1.
 
       ```
       unzip  -d ./  *.zip
