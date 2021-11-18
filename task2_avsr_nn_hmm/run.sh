@@ -109,7 +109,7 @@ fi
 # prepare lang_test
 if [ $stage -le 4 ]; then
   if [[ ! -f data/lang/G.fst || data/lang/G.fst -ot data/srilm/lm.gz ]]; then
-    utils/format_lm.sh data/lang_new data/srilm/lm.gz data/local/dict/lexicon.txt data/lang_test_new
+    utils/format_lm.sh data/lang data/srilm/lm.gz data/local/dict/lexicon.txt data/lang_test
   fi
 fi
 
