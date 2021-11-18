@@ -50,7 +50,7 @@ data_roi=data/local/roi
 if [ $stage -le -1 ]; then
   for x in dev train ; do
     if [[ ! -f ${enhancement_dir}/audio/$x.done ]]; then
-      local/enhancement.sh --stage 1 --python_path $python_path --beamformit_path $beamformit_path \
+      local/enhancement.sh --stage 0 --python_path $python_path --beamformit_path $beamformit_path \
         $misp2021_corpus/audio/$x ${enhancement_dir}/audio/$x  || exit 1;
       touch ${enhancement_dir}/audio/$x.done
     fi
