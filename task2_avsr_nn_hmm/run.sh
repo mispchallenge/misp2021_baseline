@@ -34,9 +34,9 @@ source ./bashrc
 set -e
 
 # path settings
-beamformit_path=      # e.g. ./BeamformIt-master
-python_path=          # e.g. ./python/bin
-misp2021_corpus=      # e.g. ./misp2021
+beamformit_path=      # e.g. /path/BeamformIt-master
+python_path=          # e.g. /path/python/bin
+misp2021_corpus=      # e.g. /path/misp2021
 enhancement_dir=${misp2021_corpus}_WPE
 dict_dir=data/local/dict
 data_roi=data/local/roi
