@@ -24,7 +24,7 @@
 
   - **speech augmentation** 
 
-    Simulating reverberant and noisy data from near field speech, noise is widely adopted. We provide a baseline speech simulation tool to add reverberation and noise for speech augmentation. Considering that the negative samples are easier to obtain, we simulate all positive samples and partial negative samples (listed in file data_prepare/negative.scp). Here, we only use channel 1 for simulation.
+    Simulating reverberant and noisy data from near field speech, noise is widely adopted. We provide a baseline speech simulation tool to add reverberation and noise for speech augmentation. Considering that the negative samples are easier to obtain, we simulate all positive samples and partial negative samples (listed in file [data_prepare/negative_simulation.scp](data_prepare/negative_simulation.scp)). Here, we only use channel 1 for simulation.
 
     - **add reverberation**
 
