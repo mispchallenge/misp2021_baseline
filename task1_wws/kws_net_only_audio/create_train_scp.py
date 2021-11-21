@@ -10,7 +10,7 @@ def find_wav(data_root, scp_dir, scp_name='wpe'):
         all_wav_paths += glob.glob(i)
     sorted_wav_paths = sorted(all_wav_paths)
     lines = ['' for _ in range(1)]
-    for wav_idx in range(len(sorted_wav_paths[:100])):
+    for wav_idx in range(len(sorted_wav_paths)):
         line = sorted_wav_paths[wav_idx]
         if 'negative' in scp_name or 'dev' in scp_name:
             fs, data = wf.read(line)
