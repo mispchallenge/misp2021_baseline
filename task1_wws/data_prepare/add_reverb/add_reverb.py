@@ -43,7 +43,7 @@ with open(trainset_near_path) as f:
 trainset_near = [line.strip() for line in lines]
 rt60_tgt = 0.4
 
-for it in trainset_near[:30]:
+for it in trainset_near:
 	
 	it = it.replace('\n', '')
 	room_dim = []
