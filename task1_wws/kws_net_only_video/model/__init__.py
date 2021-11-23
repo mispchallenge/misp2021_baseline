@@ -1,0 +1,1 @@
+__all__ = ['audio_kwsnet.py', 'audio_kwsnet_test.py']
