@@ -7,10 +7,13 @@
 
 - **System description**
 
-    The system implements a neural network (NN) based approach, where filter bank features are first extracted for each sample, and a network consisting of CNN layers, LSTM layer and fully connected layers are trained to assign labels to the audio samples.
+    The audio system implements a neural network (NN) based approach, where filter bank features are first extracted for each sample, and a network consisting of CNN layers, LSTM layer and fully connected layers are trained to assign labels to the audio samples.
 
+    For the video system, the same network structure is adopted as the audio network.
+    
+    For fusion, we consider late fusion, that is, the mean of the a posteriori probability of the network output of audio and video is used to calculate the final score.
 
-- **Data preparation**
+- **preparation**
 
   - **prepare data directory**
 
@@ -34,17 +37,51 @@
 
         We provide a simple tool to add noise with different signal-to-noise ratio. In our configuration, the reverberated speech is corrupted by the collected noise at seven signal-to-noise ratios (from -15dB to 15dB with a step of 5dB).
 
+    - **download the pretrained model and coordinate information used to crop ROI**
 
+        ```
+        dropbox url:https://www.dropbox.com/s/4pe3j2swf2cwvik/lipreading_LRW.pt?dl=0
+        verification code: zxzs23
+        
+        Baidu clouddisk url：https://pan.baidu.com/s/1SeJyQ3aBsGz2O_YCU3X1LQ
+        verification code：4chh
+        ```
+ 
+        The pretrained model needs to be placed on the spectific path
+        
+        ```
+        ${task1_baseline}/kws_net_only_video/model/pretrained/lipreading_LRW.pt
+        ```
+    - **download coordinate information used to crop ROI**
+
+        ```
+        dropbox url:https://www.dropbox.com/s/g6pst3fr5a13m8y/misp2021_task1_roi_midfield.zip?dl=0
+        verification code: zxzs23
+        
+        Baidu clouddisk url：https://pan.baidu.com/s/1XSWBDx08EQR3aP1j2TXhXg
+        verification code：6pyk 
+        
+        MD5：581ec2a5daba9ee16c03ea022577b69a
+        ```
+              
 - **Audio Wake Word Spotting**
 
-    For features extraction, we employ 40-dimensional filter bank (FBank) features normalized by global mean and variance as the input of the audio WWS system. The final output of the models compared with the preset threshold after sigmoid operation to calculate the false reject rate (FRR) and false alarm rate (FAR). Here comes the results.
+    For features extraction, we employ 40-dimensional filter bank (FBank) features normalized by global mean and variance as the input of the audio WWS system. The final output of the models compared with the preset threshold after sigmoid operation to calculate the false reject rate (FRR) and false alarm rate (FAR).
 
+- **Video Wake Word Spotting**
+
+    To get visual embeddings, we firstly crop mouth ROIs from video streams, then use the [lipreading TCN](https://github.com/mpc001/Lipreading_using_Temporal_Convolutional_Networks)  to extract 512-dimensional features. The extracted features are input into the same network structure as the audio network.
 
 ## Results
 
-
   The system performances are as follows:
-![result_readme](media/result_readme.png)
+
+| Models         | Scenario    | FRR     | FAR    | Score  |
+| -------------- | ----------- | ------- | -------|-------|
+| Audio   | Middle      |  0.07   | 0.08   | 0.15   |
+| Audio  | Far         |  0.18   | 0.09   |  0.27| 
+| Video  | Middle      | 0.21|0.12 |0.33 | 
+| A-V | Middle      |  0.06 | 0.07 | 0.13 |
 
 
 ## Setting Paths
@@ -70,21 +107,45 @@ data_root=
 python_path=
 ```
 
+- **kws_net_only_video**
+
+```
+--- kws_net_only_video/run.sh ---
+# Defining corpus directory
+data_root=
+# Defining path to python interpreter
+python_path=
+```
+
 ## Running the baseline audio system
 
 - **Simulation (optional)**
 
-```
-cd data_prepare
-sh run.sh
-```
+    ```
+    cd data_prepare
+    sh run.sh
+    ```
 
-- **Run Training**
+- **Run Audio Training**
 
-```
-cd ../kws_net_only_audio
-sh run.sh
-```
+    ```
+    cd ../kws_net_only_audio
+    sh run.sh
+    ```
+
+- **Run Vudio Training**
+
+    ```
+    cd ../kws_net_only_vudio
+    sh run.sh
+    ```
+
+- **Run Fusion**
+
+    ```
+    cd ../kws_net_fusion
+    python fusion.py
+    ```
 
 ## Requirments
 
