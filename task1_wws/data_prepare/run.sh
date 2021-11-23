@@ -23,3 +23,7 @@ ${python_path}python add_noise/process_data.py --data_root $data_root --scp_path
 perl add_noise/Add_noise_MultipleOutput.pl
 rm add_noise/scp/*[0-9]
 ${python_path}python add_noise/process_data.py --data_root $data_root --mode raw2wav
+
+# get lip feature
+echo "get lip feature"
+${python_path}python get_lip_feature.py --data_root $data_root
