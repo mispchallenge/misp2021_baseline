@@ -230,17 +230,18 @@ def input_interface(data_root, roi_json_dir):
         lines_content = handle.readlines()
     for segment_line in [*map(lambda x: x[:-1] if x[-1] in ['\n'] else x, lines_content)]:
         segment_name, name, start, end = segment_line.split(' ')
-        if video_dic[name] not in segments_dic:
-            segments_dic[video_dic[name]] = {
-                'roi_json_path': os.path.join(roi_json_dir, '{}.json'.format(name)),
-                'segments_name': [segment_name], 'segments_speaker': [vid2spk_dic[segment_name]],
-                'segments_start': [int(np.around(float(start) * fps))],
-                'segments_end': [int(np.around(float(end) * fps))]}
-        else:
-            segments_dic[video_dic[name]]['segments_name'].append(segment_name)
-            segments_dic[video_dic[name]]['segments_speaker'].append(vid2spk_dic[segment_name])
-            segments_dic[video_dic[name]]['segments_start'].append(int(np.around(float(start) * fps)))
-            segments_dic[video_dic[name]]['segments_end'].append(int(np.around(float(end) * fps)))
+        if os.path.exists(os.path.join(roi_json_dir, '{}.json'.format(name))):
+            if video_dic[name] not in segments_dic:
+                segments_dic[video_dic[name]] = {
+                    'roi_json_path': os.path.join(roi_json_dir, '{}.json'.format(name)),
+                    'segments_name': [segment_name], 'segments_speaker': [vid2spk_dic[segment_name]],
+                    'segments_start': [int(np.around(float(start) * fps))],
+                    'segments_end': [int(np.around(float(end) * fps))]}
+            else:
+                segments_dic[video_dic[name]]['segments_name'].append(segment_name)
+                segments_dic[video_dic[name]]['segments_speaker'].append(vid2spk_dic[segment_name])
+                segments_dic[video_dic[name]]['segments_start'].append(int(np.around(float(start) * fps)))
+                segments_dic[video_dic[name]]['segments_end'].append(int(np.around(float(end) * fps)))
 
     return segments_dic
 
