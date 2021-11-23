@@ -166,15 +166,23 @@ def read_tier_from_lines(tier_lines):
 
     assert 'intervals: size' in tier_lines[4], 'error line 4, {}'.format(tier_lines[4])
     intervals_num = int(tier_lines[4].split('=')[1].replace(' ', '').replace('\r', '').replace('\n', ''))
+    
+    if tier_lines[-1] == '\n':
+        tier_lines = tier_lines[:-1]
 
-    assert len(tier_lines[5:]) == intervals_num * 5, 'error lines'
+    assert len(tier_lines[5:]) == intervals_num * 5 or len(tier_lines[5:]) == intervals_num * 4, 'error lines'
 
     intervals = []
     for intervals_idx in range(intervals_num):
-        assert tier_lines[5 + 5 * intervals_idx + 0] == ' ' * 8 + 'intervals [{}]:\r\n'.format(intervals_idx + 1)
-        assert tier_lines[5 + 5 * intervals_idx + 1] == ' ' * 8 + 'intervals [{}]:\r\n'.format(intervals_idx + 1)
-        intervals.append(read_interval_from_lines(
-            interval_lines=tier_lines[7 + 5 * intervals_idx: 10 + 5 * intervals_idx]))
+        if len(tier_lines[5:]) == intervals_num * 5:
+            assert tier_lines[5 + 5 * intervals_idx + 0] == ' ' * 8 + 'intervals [{}]:\r\n'.format(intervals_idx + 1)
+            assert tier_lines[5 + 5 * intervals_idx + 1] == ' ' * 8 + 'intervals [{}]:\r\n'.format(intervals_idx + 1)
+            intervals.append(read_interval_from_lines(
+                interval_lines=tier_lines[7 + 5 * intervals_idx: 10 + 5 * intervals_idx]))
+        else:
+            assert tier_lines[5 + 4 * intervals_idx + 0] == ' ' * 8 + 'intervals [{}]:\r\n'.format(intervals_idx + 1)
+            intervals.append(read_interval_from_lines(
+                interval_lines=tier_lines[6 + 4 * intervals_idx:  + 9 + 4 * intervals_idx]))
     return Tier(tier_class=tier_class, name=name, xmin=xmin, xmax=xmax, intervals=intervals)
 
 
