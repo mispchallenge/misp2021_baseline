@@ -19,8 +19,8 @@ def find_wav(data_root, scp_dir, scp_name='wpe'):
                     data = data[(len(data)-48000)//2:(len(data)+48000)//2]
                     line = line.replace('.wav', '_limit3s.wav')
                     wf.write(line, fs, data)
-                line += '\n'
-                lines[0] += line
+        line += '\n'
+        lines[0] += line
 
     if not os.path.exists(scp_dir):
         os.makedirs(scp_dir, exist_ok=True)
