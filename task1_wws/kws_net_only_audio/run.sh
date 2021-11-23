@@ -27,3 +27,6 @@ echo "start training procedure"
 mkdir -p $project
 mkdir -p $logdir
 ${python_path}python train.py --end_iter 3 --project $project --logdir $logdir
+
+echo "decode"
+${python_path}python decode.py --load_model ./trained_model/KWS_Lite_Net_1ch_0.model  # choose a model to decode
