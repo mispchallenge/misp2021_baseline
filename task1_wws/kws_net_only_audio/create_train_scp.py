@@ -12,18 +12,13 @@ def find_wav(data_root, scp_dir, scp_name='wpe'):
     lines = ['' for _ in range(1)]
     for wav_idx in range(len(sorted_wav_paths)):
         line = sorted_wav_paths[wav_idx]
-        if 'negative' in scp_name or 'dev' in scp_name:
+        if 'negative_train' in scp_name:
             fs, data = wf.read(line)
             if len(data) > 12000:
                 if len(data) > 48001:
                     data = data[(len(data)-48000)//2:(len(data)+48000)//2]
                     line = line.replace('.wav', '_limit3s.wav')
                     wf.write(line, fs, data)
-                line += '\n'
-                lines[0] += line
-        else:
-            fs, data = wf.read(line)
-            if len(data) > 4000:
                 line += '\n'
                 lines[0] += line
 
