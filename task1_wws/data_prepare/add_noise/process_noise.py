@@ -18,7 +18,7 @@ dir_ = tmp.replace('/audio/train/middle/', '/processedmiddle/').split('/')
 os.system('mkdir -p {}'.format('/'.join(dir_[:-1])))
 data, fs = sf.read(wavs[0])
 line = ''
-for wav in wavs[500:5000]:
+for wav in wavs:
     head = '_'.join(wav.split('_')[:-1])
     if head == tmp:
         data_, _ = sf.read(wav)
