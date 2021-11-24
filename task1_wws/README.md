@@ -76,12 +76,12 @@
 
   The system performances are as follows:
 
-| Models         | Scenario    | FRR     | FAR    | Score  |
+| Modality       | Scenario    | FRR     | FAR    | Score  |
 | -------------- | ----------- | ------- | -------|-------|
 | Audio   | Middle      |  0.07   | 0.08   | 0.15   |
 | Audio  | Far         |  0.18   | 0.09   |  0.27| 
 | Video  | Middle      | 0.21|0.12 |0.33 | 
-| A-V | Middle      |  0.06 | 0.07 | 0.13 |
+| Audio-visual | Middle      |  0.06 | 0.07 | 0.13 |
 
 
 ## Setting Paths
