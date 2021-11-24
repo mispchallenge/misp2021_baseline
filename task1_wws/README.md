@@ -155,7 +155,7 @@ python_path=
 
     numpy
     
-    [cv2](https://github.com/opencv/opencv-python)
+    [OpenCV](https://github.com/opencv/opencv-python)
 
     tqdm
 
