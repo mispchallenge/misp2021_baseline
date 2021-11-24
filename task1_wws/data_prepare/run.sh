@@ -21,6 +21,8 @@ echo "start adding middle noise "
 ${python_path}python add_noise/process_noise.py --data_root $data_root
 mkdir -p add_noise/scp
 ${python_path}python add_noise/process_data.py --data_root $data_root --scp_path add_noise/scp/positive.scp
+mkdir -p add_noise/scp
+mkdir -p add_noise/Config
 perl add_noise/Add_noise_MultipleOutput.pl
 rm add_noise/*/*[0-9]
 rm -r positive*
