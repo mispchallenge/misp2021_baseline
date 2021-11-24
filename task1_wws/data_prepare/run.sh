@@ -20,6 +20,7 @@ ${python_path}python add_reverb/add_reverb.py --scp_path add_reverb/positive.scp
 echo "start adding middle noise "
 ${python_path}python add_noise/process_noise.py --data_root $data_root
 chmod 754 add_noise/AddNoise_MultiOutput
+chmod 754 add_noise/bin/AddNoise_MultiOutput
 mkdir -p add_noise/scp
 mkdir -p add_noise/Config
 mkdir -p add_noise/log
