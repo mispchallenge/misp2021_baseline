@@ -154,6 +154,8 @@ python_path=
 - **python packages:**
 
     numpy
+    
+    [cv2](https://github.com/opencv/opencv-python)
 
     tqdm
 
