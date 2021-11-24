@@ -133,7 +133,7 @@ python_path=
     sh run.sh
     ```
 
-- **Run Vudio Training**
+- **Run Video Training**
 
     ```
     cd ../kws_net_only_vudio
