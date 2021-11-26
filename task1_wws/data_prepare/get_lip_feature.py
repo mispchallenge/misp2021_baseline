@@ -52,7 +52,7 @@ if __name__ == '__main__':
 
 	args = parser.parse_args()
 	
-	input_lip_roi = args.input_lip_roi
+	input_lip_roi = args.data_root
 	
 	t0 = time.time()
 	lip_file = get_file(input_lip_roi, '.npy')
