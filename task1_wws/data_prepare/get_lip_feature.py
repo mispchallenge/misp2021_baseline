@@ -4,6 +4,7 @@ import os
 import argparse
 import time
 from os import path
+from tqdm import tqdm
 
 
 def checkdir(_dir):
@@ -21,6 +22,7 @@ def get_file(_dir, _sig):
 	return L
 
 def extract_lip_feature(_video_file):
+	_video_file = tqdm(_video_file)
 	for index, file in enumerate(_video_file):
 		video_file = file.replace('_lip_roi.npy', '.mp4')
 		if path.exists(video_file):
