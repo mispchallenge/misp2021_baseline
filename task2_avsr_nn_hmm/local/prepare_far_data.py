@@ -239,7 +239,7 @@ def prepare_segments_text_utt2spk_worker(transcription_dir, set_type, store_dir,
     utt2spk_lines = []
     tier_name = '内容层'
     rejected_text_list = ['<NOISE>', '<DEAF>']
-    punctuation_list = ['。', '，', '？']
+    punctuation_list = [' 。',' .',' ？',' ?',' !',' ！',' ，',' ,']
     sound_list = ['呃', '啊', '噢', '嗯', '唉']
     min_duration = 0.04
 
