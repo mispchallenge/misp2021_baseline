@@ -25,7 +25,7 @@
       *.zip indicates the file name that needs to be unzipped
       ```
 
-  - **speech augmentation** 
+  - **speech simulation** 
 
     Simulating reverberant and noisy data from near field speech, noise is widely adopted. We provide a baseline speech simulation tool to add reverberation and noise for speech augmentation. Considering that the negative samples are easier to obtain, we simulate all positive samples and partial negative samples (listed in file [data_prepare/negative_simulation.scp](data_prepare/negative_simulation.scp)). Here, we only use channel 1 for simulation.
 
@@ -37,33 +37,52 @@
 
         We provide a simple tool to add noise with different signal-to-noise ratio. In our configuration, the reverberated speech is corrupted by the collected noise at seven signal-to-noise ratios (from -15dB to 15dB with a step of 5dB).
 
-    - **download the pretrained model and coordinate information used to crop ROI**
+  - **download the pretrained model**
 
-        ```
-        dropbox url:https://www.dropbox.com/s/4pe3j2swf2cwvik/lipreading_LRW.pt?dl=0
-        verification code: zxzs23
-        
-        Baidu clouddisk url：https://pan.baidu.com/s/1SeJyQ3aBsGz2O_YCU3X1LQ
-        verification code：4chh
-        ```
- 
-        The pretrained model needs to be placed on the spectific path
-        
-        ```
-        ${task1_baseline}/kws_net_only_video/model/pretrained/lipreading_LRW.pt
-        ```
-    - **download coordinate information used to crop ROI**
+    ```
+    dropbox url:https://www.dropbox.com/s/4pe3j2swf2cwvik/lipreading_LRW.pt?dl=0
+    verification code: zxzs23
+    
+    Baidu clouddisk url：https://pan.baidu.com/s/1SeJyQ3aBsGz2O_YCU3X1LQ
+    verification code：4chh
+    ```
 
-        ```
-        dropbox url:https://www.dropbox.com/s/g6pst3fr5a13m8y/misp2021_task1_roi_midfield.zip?dl=0
-        verification code: zxzs23
-        
-        Baidu clouddisk url：https://pan.baidu.com/s/1XSWBDx08EQR3aP1j2TXhXg
-        verification code：6pyk 
-        
-        MD5：581ec2a5daba9ee16c03ea022577b69a
-        ```
-              
+    The pretrained model needs to be placed on the spectific path
+    
+    ```
+    ${task1_baseline}/kws_net_only_video/model/pretrained/lipreading_LRW.pt
+    ```
+  - **download coordinate information used to crop ROI**
+      - **midfield**
+      
+    ```
+    dropbox url:https://www.dropbox.com/s/g6pst3fr5a13m8y/misp2021_task1_roi_midfield.zip?dl=0
+    verification code: zxzs23
+    
+    Baidu Netdisk url：https://pan.baidu.com/s/1XSWBDx08EQR3aP1j2TXhXg
+    verification code：6pyk 
+    
+    MD5：581ec2a5daba9ee16c03ea022577b69a
+    ```
+      - **far-field**         
+
+    ```    
+    misp2021_task1_roi_farfield.zip 
+    dropbox url:https://www.dropbox.com/s/0gn4djyzsp2yzr1/misp2021_task1_roi_farfield.zip?dl=0
+    verification code: zxzs   
+    Baidu Netdisk url：https://pan.baidu.com/s/1v5BANcgt1lk8OikUCUxL5g
+    verification code：zxzs
+    MD5: b6d84a6aaa10ff5d72d7381c9758860b    
+    
+    lip_npy_far.zip
+    dropbox url:https://www.dropbox.com/s/db68266ck3rlk43/lip_npy_far.zip?dl=0
+    verification code: zxzs
+    Baidu Netdisk url：https://pan.baidu.com/s/1v5BANcgt1lk8OikUCUxL5g
+    verification code：zxzs    
+    MD5：1dbb0f589fff40cbafa0c9be88aa93a3 
+    ```
+
+     
 - **Audio Wake Word Spotting**
 
     For features extraction, we employ 40-dimensional filter bank (FBank) features normalized by global mean and variance as the input of the audio WWS system. The final output of the models compared with the preset threshold after sigmoid operation to calculate the false reject rate (FRR) and false alarm rate (FAR).
@@ -82,6 +101,7 @@
 | Audio   | Far         |  0.18   | 0.09   |  0.27| 
 | Video   | Middle      | 0.21|0.12 |0.33 | 
 | Audio-visual | Middle      |  0.06 | 0.07 | 0.13 |
+| Audio-visual | Far         |  0.12 | 0.14 | 0.26 |
 
 
 ## Setting Paths
@@ -166,6 +186,4 @@ python_path=
 - **other tools:**
 
     [sox](http://sox.sourceforge.net/) 
-
-
 
