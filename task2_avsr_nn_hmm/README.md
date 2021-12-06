@@ -34,10 +34,10 @@
 
 | Models         | CCER of Dev |
 | -------------- | ----------- |
-| Chain-TDNN-A   | 66.85       |
-| Chain-TDNN-A*  | 63.17       |
-| Chain-TDNN-AV  | 65.60       |
-| Chain-TDNN-AV* | 61.24       |
+| Chain-TDNN-A   | 65.89       |
+| Chain-TDNN-A*  | 63.03       |
+| Chain-TDNN-AV  | 65.87       |
+| Chain-TDNN-AV* | 61.80       |
 
 We denote Chain-TDNN-A as audio-only ASR and Chain-TDNN-AV as AVSR, and the symbol * indicates the model is trained with augmentation strategy.
 
