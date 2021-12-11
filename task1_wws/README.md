@@ -93,7 +93,7 @@
 
 ## Results
 
-  The system performances are as follows:
+  After adjusting different thresholds, the system performances are as follows:
 
 | Modality       | Scenario    | FRR     | FAR    | Score  |
 | -------------- | ----------- | ------- | -------|-------|
