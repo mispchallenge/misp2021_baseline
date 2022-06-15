@@ -137,6 +137,14 @@ Here some naming rules for directories produced during the four TDNN models trai
 If you find this code useful in your research, please consider to cite the following papers:
 
 ```bibtex
+@inproceedings{chen2022first,
+  title={The first multimodal information based speech processing (misp) challenge: Data, tasks, baselines and results},
+  author={Chen, Hang and Zhou, Hengshun and Du, Jun and Lee, Chin-Hui and Chen, Jingdong and Watanabe, Shinji and Siniscalchi, Sabato Marco and Scharenborg, Odette and Liu, Di-Yuan and Yin, Bao-Cai and others},
+  booktitle={ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={9266--9270},
+  year={2022},
+  organization={IEEE}
+}
 
 ```
 
